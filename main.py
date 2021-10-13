@@ -19,7 +19,6 @@ for images in test:
     ##### Shadow removing from image #####
 
 image = cv2.cvtColor(cv2.imread("image/my_htr.png"), cv2.COLOR_BGR2RGB)
-
 rgb_planes = cv2.split(image)
 result_planes = []
 result_norm_planes = []
@@ -34,7 +33,7 @@ result = cv2.merge(result_planes)
 shadows_out_image = cv2.merge(result_norm_planes)
 
     ##### shadow removed from image #####
-thresh = 230
+thresh = 233
 shadows_out_image = cv2.threshold(shadows_out_image, thresh, 255, cv2.THRESH_BINARY)[1]
 # shadows out image saved JUST IN CASE #
 cv2.imwrite('image/shadows_out_image.png', shadows_out_image)
